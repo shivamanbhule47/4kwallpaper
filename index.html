@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>4KWallpaper · Premium Ultra HD Wallpapers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --primary-light: #a5b4fc;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.08);
+      --shadow-xl: 0 20px 40px rgba(0,0,0,0.12);
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .app-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary), #8b5cf6);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+    }
+
+    .brand-text {
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: linear-gradient(135deg, #1e293b, var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: #f1f5f9;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #7c3aed);
+      color: white;
+      box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+      display: none;
+    }
+    .btn-primary.visible {
+      display: inline-flex;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(99,102,241,0.4);
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+      display: none;
+    }
+    .btn-danger.visible {
+      display: inline-flex;
+    }
+
+    .admin-badge {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .admin-badge.visible {
+      display: inline-flex;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 2rem;
+      margin: 2rem 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+    .search-box {
+      display: flex;
+      max-width: 550px;
+      margin: 2rem auto 0;
+      background: white;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      color: var(--text);
+    }
+    .search-box button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 2rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .search-box button:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .stat-card {
+      background: var(--surface);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .stat-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .stat-card i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .stat-card h3 {
+      font-size: 1.8rem;
+      color: var(--text);
+    }
+
+    /* Categories */
+    .categories-scroll {
+      display: flex;
+      gap: 0.8rem;
+      margin: 2rem 0;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      scrollbar-width: thin;
+    }
+    .category-chip {
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+    .category-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+    }
+
+    /* Grid */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2.5rem 0 1.5rem;
+    }
+    .wallpaper-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .wallpaper-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .wallpaper-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: #e0e7ff;
+    }
+    .card-image {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .wallpaper-card:hover .card-image img {
+      transform: scale(1.08);
+    }
+    .card-actions {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      opacity: 0;
+      transition: var(--transition);
+      backdrop-filter: blur(2px);
+    }
+    .wallpaper-card:hover .card-actions {
+      opacity: 1;
+    }
+    .action-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+    }
+    .action-btn:hover {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.1);
+    }
+    .card-info {
+      padding: 1rem 1.2rem;
+    }
+    .card-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    .badge {
+      background: #ede9fe;
+      color: #5b21b6;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* Blog section */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .blog-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .blog-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+    .blog-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog-body {
+      padding: 1.2rem;
+    }
+    .blog-body h4 {
+      margin-bottom: 0.5rem;
+    }
+    .blog-date {
+      color: var(--text-light);
+      font-size: 0.8rem;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.6);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: var(--shadow-xl);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: #fafbfc;
+    }
+    .form-group input:focus, .form-group select:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+    }
+    .dropzone {
+      border: 2px dashed #cbd5e1;
+      padding: 2rem;
+      text-align: center;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: var(--transition);
+      background: #fafbfc;
+    }
+    .dropzone:hover {
+      border-color: var(--primary);
+      background: #f5f3ff;
+    }
+    .dropzone i {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+    .preview-thumb {
+      width: 100%;
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      margin-top: 0.8rem;
+      display: none;
+    }
+    .preview-thumb.visible {
+      display: block;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #1e293b;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      z-index: 2000;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 640px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .wallpaper-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon"><i class="fas fa-crown"></i></div>
+        <div class="brand-text">4KWallpaper</div>
+      </div>
+      <div class="nav-actions">
+        <span class="admin-badge" id="adminBadge"><i class="fas fa-shield-haltered"></i> Admin</span>
+        <button class="btn btn-outline" id="loginBtn"><i class="fas fa-lock"></i> Sign In</button>
+        <button class="btn btn-primary" id="postWallpaperBtn"><i class="fas fa-plus-circle"></i> Post</button>
+        <button class="btn btn-danger" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>🚀 Stunning 4K Wallpapers</h1>
+      <p>Discover & download ultra HD wallpapers. New drops every day.</p>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search wallpapers...">
+        <button id="searchBtn"><i class="fas fa-search"></i> Search</button>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-card"><i class="fas fa-image"></i><h3 id="wallpaperCount">0</h3><small>Wallpapers</small></div>
+      <div class="stat-card"><i class="fas fa-download"></i><h3 id="downloadCount">0</h3><small>Downloads</small></div>
+      <div class="stat-card"><i class="fas fa-blog"></i><h3 id="blogCount">0</h3><small>Blog Posts</small></div>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories-scroll" id="categoryContainer">
+      <span class="category-chip active" data-cat="All">🌟 All</span>
+      <span class="category-chip" data-cat="Nature">🌿 Nature</span>
+      <span class="category-chip" data-cat="Abstract">🎨 Abstract</span>
+      <span class="category-chip" data-cat="Space">🚀 Space</span>
+      <span class="category-chip" data-cat="City">🏙️ City</span>
+      <span class="category-chip" data-cat="Minimal">✨ Minimal</span>
+    </div>
+
+    <!-- Wallpaper Grid -->
+    <div class="section-header">
+      <h2><i class="fas fa-images"></i> Latest Wallpapers</h2>
+    </div>
+    <div class="wallpaper-grid" id="wallpaperGrid"></div>
+
+    <!-- Blog Section -->
+    <div class="section-header">
+      <h2><i class="fas fa-blog"></i> Daily Blog</h2>
+    </div>
+    <div class="blog-grid" id="blogGrid"></div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal">
+      <h3>🔐 Admin Login</h3>
+      <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="admin@example.com"></div>
+      <div class="form-group"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••"></div>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="cancelLogin">Cancel</button>
+        <button class="btn btn-primary" id="submitLogin" style="display:flex;">Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="postModal">
+    <div class="modal">
+      <h3>📤 Post Wallpaper</h3>
+      <div class="form-group"><label>Title *</label><input type="text" id="postTitle" placeholder="e.g., Aurora Mountains"></div>
+      <div class="form-group"><label>Category</label><select id="postCategory"><option>Nature</option><option>Abstract</option><option>Space</option><option>City</option><option>Minimal</option></select></div>
+      <div class="form-group">
+        <label>Image *</label>
+        <div class="dropzone" id="dropzone"><i class="fas fa-cloud-upload-alt"></i><p>Click or drop image</p><small id="fileLabel">No file</small><input type="file" id="fileInput" accept="image/*" hidden></div>
+        <img id="previewImg" class="preview-thumb" alt="preview">
+      </div>
+      <div class="form-group"><label>Resolution (auto-detected)</label><input type="text" id="postResolution" placeholder="Auto-detected" readonly></div>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="cancelPost">Cancel</button>
+        <button class="btn btn-primary" id="publishPost" style="display:flex;">Publish</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="previewModal">
+    <div class="modal" style="max-width:90vw; background:transparent; padding:0;">
+      <img id="previewFull" style="width:100%; border-radius:20px; max-height:85vh; object-fit:contain;">
+      <button class="btn btn-primary" id="downloadPreview" style="position:absolute; bottom:1rem; right:1rem;"><i class="fas fa-download"></i> Download</button>
+    </div>
+  </div>
+
+<script>
+(function() {
+  const ADMIN_EMAIL = "shivamanbhule47@gmail.com";
+  const ADMIN_PASS = "Ganesh@2004";
+  let isAdmin = false;
+  let currentFilter = 'All';
+  let previewUrl = '';
+
+  // Data stores
+  let wallpapers = [
+    { id:1, title:"Mountain Aurora", url:"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", res:"3840x2160", cat:"Nature", downloads:245 },
+    { id:2, title:"Abstract Flow", url:"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800", res:"3840x2160", cat:"Abstract", downloads:189 },
+    { id:3, title:"Nebula Dream", url:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800", res:"3840x2160", cat:"Space", downloads:567 },
+    { id:4, title:"Forest Path", url:"https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800", res:"3840x2160", cat:"Nature", downloads:123 },
+    { id:5, title:"Neon Tokyo", url:"https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800", res:"3840x2160", cat:"City", downloads:389 },
+    { id:6, title:"Minimal Shapes", url:"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800", res:"3840x2160", cat:"Minimal", downloads:98 }
+  ];
+  let blogPosts = [
+    { id:1, title:"Welcome to 4KWallpaper", content:"Your daily source for premium 4K wallpapers.", image:"https://images.unsplash.com/photo-1497366216548-37526070297c?w=400", date:"2025-04-10" },
+    { id:2, title:"Photography Tips", content:"Use natural light for stunning wallpapers.", image:"https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400", date:"2025-04-11" }
+  ];
+  let nextWid = 7, nextBid = 3;
+
+  function updateUI() {
+    document.getElementById('postWallpaperBtn').classList.toggle('visible', isAdmin);
+    document.getElementById('logoutBtn').classList.toggle('visible', isAdmin);
+    document.getElementById('adminBadge').classList.toggle('visible', isAdmin);
+    document.getElementById('loginBtn').style.display = isAdmin ? 'none' : 'inline-flex';
+  }
+
+  function renderWallpapers(filter='All', search='') {
+    let data = wallpapers.filter(w => (filter==='All' || w.cat===filter) && (!search || w.title.toLowerCase().includes(search.toLowerCase())));
+    document.getElementById('wallpaperCount').textContent = wallpapers.length;
+    document.getElementById('downloadCount').textContent = wallpapers.reduce((a,b)=>a+(b.downloads||0),0);
+    const grid = document.getElementById('wallpaperGrid');
+    if(!data.length) { grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:2rem;">No wallpapers found.</p>'; return; }
+    grid.innerHTML = data.map(w=>`
+      <div class="wallpaper-card">
+        <div class="card-image">
+          <img src="${w.url}" alt="${w.title}" loading="lazy">
+          <div class="card-actions">
+            <button class="action-btn preview-trigger" data-url="${w.url}"><i class="fas fa-search-plus"></i></button>
+            <button class="action-btn download-trigger" data-url="${w.url}" data-title="${w.title}"><i class="fas fa-download"></i></button>
+          </div>
+        </div>
+        <div class="card-info"><h4>${w.title}</h4><div class="card-meta"><span class="badge">${w.res}</span><span><i class="fas fa-download"></i> ${w.downloads||0}</span></div></div>
+      </div>`).join('');
+    document.querySelectorAll('.preview-trigger').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation(); previewUrl=b.dataset.url; document.getElementById('previewFull').src=previewUrl; document.getElementById('previewModal').classList.add('active');}));
+    document.querySelectorAll('.download-trigger').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation(); downloadImage(b.dataset.url,b.dataset.title);}));
+  }
+
+  function renderBlog() {
+    document.getElementById('blogCount').textContent = blogPosts.length;
+    document.getElementById('blogGrid').innerHTML = blogPosts.map(b=>`
+      <div class="blog-card">
+        <img class="blog-image" src="${b.image}" alt="${b.title}" loading="lazy">
+        <div class="blog-body"><h4>${b.title}</h4><p>${b.content}</p><span class="blog-date">📅 ${b.date}</span></div>
+      </div>`).join('');
+  }
+
+  function downloadImage(url, title) {
+    const a = document.createElement('a'); a.href = url; a.download = (title||'wallpaper').replace(/\s/g,'_')+'_4K.jpg'; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    const w = wallpapers.find(x=>x.url===url); if(w) w.downloads = (w.downloads||0)+1;
+    renderWallpapers(currentFilter, document.getElementById('searchInput').value);
+  }
+
+  function autoDetectResolution(file, callback) {
+    const img = new Image(); const url = URL.createObjectURL(file);
+    img.onload = ()=>{ callback(`${img.naturalWidth}x${img.naturalHeight}`); URL.revokeObjectURL(url); };
+    img.src = url;
+  }
+
+  // File handling
+  const dropzone = document.getElementById('dropzone'), fileInput = document.getElementById('fileInput');
+  dropzone.addEventListener('click', ()=>fileInput.click());
+  fileInput.addEventListener('change', (e)=>{ if(e.target.files[0]) handleFile(e.target.files[0]); });
+  dropzone.addEventListener('dragover', e=>e.preventDefault());
+  dropzone.addEventListener('drop', e=>{ e.preventDefault(); if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+
+  function handleFile(file) {
+    document.getElementById('fileLabel').textContent = file.name;
+    autoDetectResolution(file, res=>{ document.getElementById('postResolution').value = res; });
+    const reader = new FileReader();
+    reader.onload = ev=>{ const preview = document.getElementById('previewImg'); preview.src=ev.target.result; preview.classList.add('visible'); };
+    reader.readAsDataURL(file);
+  }
+
+  document.getElementById('publishPost').addEventListener('click', ()=>{
+    const title = document.getElementById('postTitle').value.trim();
+    const cat = document.getElementById('postCategory').value;
+    const res = document.getElementById('postResolution').value || '3840x2160';
+    const file = fileInput.files[0];
+    if(!title || !file) return alert('Title and image required');
+    const reader = new FileReader();
+    reader.onload = (e)=>{
+      wallpapers.unshift({ id:nextWid++, title, url:e.target.result, res, cat, downloads:0 });
+      blogPosts.unshift({ id:nextBid++, title: `New: ${title}`, content: `Just dropped a new ${cat.toLowerCase()} wallpaper in ${res}.`, image:e.target.result, date:new Date().toISOString().slice(0,10) });
+      renderWallpapers(currentFilter); renderBlog();
+      document.getElementById('postModal').classList.remove('active');
+      showToast('✅ Wallpaper & blog post published!');
+      resetPostForm();
+    };
+    reader.readAsDataURL(file);
+  });
+
+  function resetPostForm() {
+    document.getElementById('postTitle').value=''; fileInput.value=''; document.getElementById('fileLabel').textContent='No file';
+    document.getElementById('postResolution').value=''; document.getElementById('previewImg').classList.remove('visible');
+  }
+
+  function showToast(msg) {
+    const t = document.createElement('div'); t.className='toast'; t.textContent=msg; document.body.appendChild(t);
+    setTimeout(()=>t.remove(), 2500);
+  }
+
+  // Auth
+  document.getElementById('submitLogin').addEventListener('click',()=>{
+    if(document.getElementById('loginEmail').value.trim()===ADMIN_EMAIL && document.getElementById('loginPassword').value.trim()===ADMIN_PASS){
+      isAdmin=true; updateUI(); document.getElementById('loginModal').classList.remove('active'); showToast('✅ Admin signed in');
+    } else alert('Invalid credentials');
+  });
+  document.getElementById('logoutBtn').addEventListener('click',()=>{ isAdmin=false; updateUI(); showToast('Logged out'); });
+
+  // Modal toggles
+  document.getElementById('loginBtn').addEventListener('click',()=>document.getElementById('loginModal').classList.add('active'));
+  document.getElementById('postWallpaperBtn').addEventListener('click',()=>{ if(isAdmin) document.getElementById('postModal').classList.add('active'); });
+  document.getElementById('cancelLogin').addEventListener('click',()=>document.getElementById('loginModal').classList.remove('active'));
+  document.getElementById('cancelPost').addEventListener('click',()=>{ document.getElementById('postModal').classList.remove('active'); resetPostForm(); });
+  document.querySelectorAll('.modal-overlay').forEach(m=>m.addEventListener('click',e=>{ if(e.target===m) m.classList.remove('active'); }));
+  document.getElementById('downloadPreview').addEventListener('click',()=>{ if(previewUrl) downloadImage(previewUrl,'4K_Wallpaper'); });
+
+  // Categories & search
+  document.getElementById('categoryContainer').addEventListener('click',e=>{
+    if(e.target.classList.contains('category-chip')){
+      document.querySelectorAll('.category-chip').forEach(c=>c.classList.remove('active'));
+      e.target.classList.add('active'); currentFilter = e.target.dataset.cat;
+      renderWallpapers(currentFilter, document.getElementById('searchInput').value);
+    }
+  });
+  document.getElementById('searchBtn').addEventListener('click',()=>renderWallpapers(currentFilter, document.getElementById('searchInput').value));
+  document.getElementById('searchInput').addEventListener('keypress',e=>{ if(e.key==='Enter') renderWallpapers(currentFilter, e.target.value); });
+
+  updateUI(); renderWallpapers(); renderBlog();
+})();
+</script>
+</body>
+</html>
