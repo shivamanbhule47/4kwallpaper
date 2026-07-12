@@ -3,95 +3,188 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>4K Wallpaper - Premium Music & Wallpapers</title>
+    <title>4KWallpaper.pro - Premium High-Resolution Wallpapers</title>
     <link rel="stylesheet" href="style.css" />
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <i class="fas fa-music"></i>
-            <span>4KWallpaper</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#admin" class="admin-btn"><i class="fas fa-user-shield"></i> Admin</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-images"></i>
+                <span>4KWallpaper.pro</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Premium 4K Wallpapers & Music</h1>
-            <p>Curated high-quality wallpapers with immersive music experience</p>
+            <h1>Premium 4K Wallpapers</h1>
+            <p>Curated collection of high-resolution wallpapers for your desktop</p>
             <a href="#gallery" class="cta-btn">Explore Gallery</a>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Wallpaper Gallery</h2>
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- Dynamic content from JavaScript -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-container">
+            <h2>Wallpaper Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Wallpaper Cards -->
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div class="card-content">
+                            <h3>Stac a Phris Arch, Scotland</h3>
+                            <p class="category">Landscape</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        <div class="card-content">
+                            <h3>GTA 6, Artwork, Jason</h3>
+                            <p class="category">Gaming</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                        <div class="card-content">
+                            <h3>Ocean Waves, Sunset</h3>
+                            <p class="category">Nature</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                        <div class="card-content">
+                            <h3>Mountain Peak, Alpine</h3>
+                            <p class="category">Landscape</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                        <div class="card-content">
+                            <h3>Desert Dunes, Golden Hour</h3>
+                            <p class="category">Landscape</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                        <div class="card-content">
+                            <h3>Aurora Borealis, Northern Lights</h3>
+                            <p class="category">Nature</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
+                        <div class="card-content">
+                            <h3>Cyberpunk City, Neon</h3>
+                            <p class="category">Digital Art</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div class="card-content">
+                            <h3>Forest Mist, Serenity</h3>
+                            <p class="category">Landscape</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                        <div class="card-content">
+                            <h3>Sunset Beach, Tropical</h3>
+                            <p class="category">Nature</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                        <div class="card-content">
+                            <h3>Starfield, Galaxy</h3>
+                            <p class="category">Space</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                        <div class="card-content">
+                            <h3>Waterfall Paradise, Tropical</h3>
+                            <p class="category">Landscape</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-card">
+                    <div class="card-inner">
+                        <div class="card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                        <div class="card-content">
+                            <h3>Volcano Landscape, Dramatic</h3>
+                            <p class="category">Landscape</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-container" id="blogContainer">
-            <!-- Dynamic blog posts -->
-        </div>
-    </section>
-
-    <!-- Admin Panel (Hidden by default) -->
-    <section id="admin" class="admin-panel">
-        <div class="admin-container">
-            <h2><i class="fas fa-crown"></i> Admin Dashboard</h2>
-            <div class="admin-forms">
-                <div class="form-card">
-                    <h3>Add New Wallpaper</h3>
-                    <form id="wallpaperForm">
-                        <input type="text" id="wallTitle" placeholder="Wallpaper Title" required />
-                        <input type="url" id="wallImage" placeholder="Image URL (4K)" required />
-                        <input type="text" id="wallCategory" placeholder="Category (e.g., Nature)" />
-                        <button type="submit">Upload Wallpaper</button>
-                    </form>
-                </div>
-                <div class="form-card">
-                    <h3>Create Blog Post</h3>
-                    <form id="blogForm">
-                        <input type="text" id="blogTitle" placeholder="Post Title" required />
-                        <textarea id="blogContent" placeholder="Write your post content..." rows="4"></textarea>
-                        <input type="text" id="blogAuthor" placeholder="Author Name" />
-                        <button type="submit">Publish Post</button>
-                    </form>
-                </div>
-            </div>
-            <div class="admin-posts">
-                <h3>Manage Content</h3>
-                <div id="adminContentList"></div>
-            </div>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <h2>About 4KWallpaper.pro</h2>
+            <p>Welcome to 4KWallpaper.pro, your premier destination for premium, high-resolution wallpapers. Our curated collection brings stunning visuals from landscapes, gaming, digital art, and space photography directly to your desktop.</p>
+            <p>Every wallpaper is carefully selected to ensure the highest quality at 4K resolution. Whether you're seeking serenity in nature or excitement in gaming artwork, we have something for everyone.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 4KWallpaper | All Rights Reserved</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 4KWallpaper.pro | All Rights Reserved</p>
+            <div class="social-links">
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
     </footer>
 
