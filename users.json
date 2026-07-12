@@ -1,0 +1,9 @@
+{
+  "admins": [
+    {
+      "email": "shivamanbhule47@gmail.com",
+      "passwordHash": "Ganesh@2004",
+      "role": "admin"
+    }
+  ]
+}
