@@ -1,0 +1,14 @@
+{
+  "id": 4,
+  "title": "Ocean Waves Tropical Paradise",
+  "description": "Escape to paradise with this stunning tropical beach wallpaper in 4K. Crystal clear turquoise waters and white sand create the perfect desktop escape.",
+  "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80",
+  "resolution": "3840x2160",
+  "category": "Beach",
+  "featured": false,
+  "date": "2026-07-09",
+  "tags": ["beach", "ocean", "tropical", "paradise", "waves", "summer"],
+  "downloads": 1100,
+  "views": 7200,
+  "author": "Beach Photographer"
+}
