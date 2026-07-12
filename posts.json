@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Stunning Mountain Aurora",
+      "description": "Witness the breathtaking beauty of the Northern Lights dancing over majestic mountain peaks. A perfect blend of nature's most spectacular phenomena.",
+      "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
+      "category": "Nature",
+      "featured": true,
+      "date": "2026-07-12",
+      "tags": ["mountain", "aurora", "nature", "landscape"],
+      "downloads": 1250,
+      "views": 5600
+    },
+    {
+      "id": 2,
+      "title": "Tropical Paradise Beach",
+      "description": "Experience paradise with this stunning tropical beach wallpaper. Crystal clear waters, white sand, and the perfect sunset.",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+      "category": "Nature",
+      "featured": true,
+      "date": "2026-07-11",
+      "tags": ["beach", "tropical", "sunset", "ocean"],
+      "downloads": 980,
+      "views": 4200
+    },
+    {
+      "id": 3,
+      "title": "Cyberpunk City Neon",
+      "description": "Dive into the digital realm with this futuristic cyberpunk cityscape. Neon lights illuminate the digital age.",
+      "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f5ae4e8f31e?w=800",
+      "category": "Digital Art",
+      "featured": false,
+      "date": "2026-07-10",
+      "tags": ["cyberpunk", "neon", "digital", "futuristic"],
+      "downloads": 756,
+      "views": 3100
+    }
+  ],
+  "lastUpdated": "2026-07-12T18:43:00Z"
+}
