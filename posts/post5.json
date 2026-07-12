@@ -1,0 +1,14 @@
+{
+  "id": 5,
+  "title": "Mountain Peak Snow Adventure",
+  "description": "Stand at the top of the world with this spectacular alpine mountain wallpaper. Snow-covered peaks and clear blue skies create a sense of adventure and wonder.",
+  "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
+  "resolution": "3840x2160",
+  "category": "Mountain",
+  "featured": false,
+  "date": "2026-07-08",
+  "tags": ["mountain", "peak", "snow", "alpine", "adventure", "landscape"],
+  "downloads": 890,
+  "views": 4500,
+  "author": "Mountain Climber"
+}
