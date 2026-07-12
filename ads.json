@@ -1,0 +1,35 @@
+{
+  "ads": [
+    {
+      "id": 1,
+      "title": "Premium Desktop Setup",
+      "description": "Get the best gaming setup with RGB lighting",
+      "imageUrl": "https://via.placeholder.com/300x200?text=Premium+Setup",
+      "link": "#",
+      "position": "sidebar-top",
+      "active": true,
+      "clickCount": 0
+    },
+    {
+      "id": 2,
+      "title": "4K Monitor Sale",
+      "description": "Ultra HD monitors at unbeatable prices",
+      "imageUrl": "https://via.placeholder.com/300x200?text=4K+Monitor",
+      "link": "#",
+      "position": "sidebar-middle",
+      "active": true,
+      "clickCount": 0
+    },
+    {
+      "id": 3,
+      "title": "Screen Protector",
+      "description": "Protect your expensive displays",
+      "imageUrl": "https://via.placeholder.com/300x200?text=Protector",
+      "link": "#",
+      "position": "footer-banner",
+      "active": true,
+      "clickCount": 0
+    }
+  ],
+  "lastUpdated": "2026-07-12T18:43:00Z"
+}
