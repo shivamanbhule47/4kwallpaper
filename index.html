@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="4KWallpaper.pro - Premium High-Resolution Wallpapers for Desktop, Mobile, and Tablet. Download stunning 4K wallpapers in any resolution.">
+    <meta name="keywords" content="4K wallpapers, desktop wallpapers, free wallpapers, high resolution, 3840x2160, 1080p, 1440p">
+    <meta name="theme-color" content="#1a1a2e">
+    
     <title>4KWallpaper.pro - Premium High-Resolution Wallpapers</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css" />
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <p>🍪 We use cookies to enhance your experience. By continuing, you accept our <a href="#privacy">Privacy Policy</a></p>
+            <button id="acceptCookie" class="btn-primary">Accept</button>
+            <button id="rejectCookie" class="btn-secondary">Reject</button>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -16,16 +29,31 @@
                 <i class="fas fa-image"></i>
                 <span>4KWallpaper.pro</span>
             </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchBar" class="search-input" placeholder="Search wallpapers...">
+                <i class="fas fa-search search-icon"></i>
+                <div id="autocompleteList" class="autocomplete-list"></div>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#posts">Blog</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#browse">Browse</a></li>
+                <li><a href="#my-collection">My Collection</a></li>
+                <li><a href="#upload">Upload</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <div class="nav-icons">
+                <button id="themeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="loginBtn" class="btn-login">Login</button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -34,183 +62,286 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Premium 4K Wallpapers</h1>
-            <p>Curated collection of high-resolution wallpapers for your desktop</p>
-            <a href="#gallery" class="cta-btn">Explore Gallery</a>
-        </div>
-    </section>
-
-    <!-- Blog Posts Section -->
-    <section id="posts" class="blog-section">
-        <div class="section-container">
-            <h2>Daily Wallpaper Posts</h2>
-            <div class="blog-grid" id="blogGrid">
-                <!-- Blog posts will be loaded here -->
+            <p>Curated collection of high-resolution wallpapers for your desktop, mobile, and tablet</p>
+            <div class="hero-search">
+                <input type="text" class="hero-search-input" placeholder="Search for wallpapers...">
+                <button class="btn-primary"><i class="fas fa-search"></i> Search</button>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
+    <!-- Advanced Filtering Section -->
+    <section class="filters-section">
+        <div class="section-container">
+            <h2>Filter & Discover</h2>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="nature">Nature</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="anime">Anime</option>
+                        <option value="technology">Technology</option>
+                        <option value="abstract">Abstract</option>
+                        <option value="landscape">Landscape</option>
+                        <option value="space">Space</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Resolution</label>
+                    <select id="resolutionFilter" class="filter-select">
+                        <option value="">All Resolutions</option>
+                        <option value="1080p">1080p (Full HD)</option>
+                        <option value="1440p">1440p (QHD)</option>
+                        <option value="4k">4K (Ultra HD)</option>
+                        <option value="8k">8K (Cinema)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Orientation</label>
+                    <select id="orientationFilter" class="filter-select">
+                        <option value="">All Orientations</option>
+                        <option value="landscape">Landscape</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="square">Square</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortFilter" class="filter-select">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="downloads">Most Downloaded</option>
+                        <option value="views">Most Viewed</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="random">Random</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Color Palette</label>
+                    <div class="color-palette">
+                        <input type="color" id="colorFilter" title="Pick a color">
+                    </div>
+                </div>
+
+                <button id="resetFilters" class="btn-secondary">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wallpaper Gallery Section -->
+    <section id="browse" class="gallery-section">
         <div class="section-container">
             <h2>Wallpaper Gallery</h2>
             <div class="gallery-grid" id="galleryGrid">
-                <!-- Wallpaper Cards -->
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                        <div class="card-content">
-                            <h3>Stac a Phris Arch, Scotland</h3>
-                            <p class="category">Landscape</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                        <div class="card-content">
-                            <h3>GTA 6, Artwork, Jason</h3>
-                            <p class="category">Gaming</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                        <div class="card-content">
-                            <h3>Ocean Waves, Sunset</h3>
-                            <p class="category">Nature</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
-                        <div class="card-content">
-                            <h3>Mountain Peak, Alpine</h3>
-                            <p class="category">Landscape</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                        <div class="card-content">
-                            <h3>Desert Dunes, Golden Hour</h3>
-                            <p class="category">Landscape</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
-                        <div class="card-content">
-                            <h3>Aurora Borealis, Northern Lights</h3>
-                            <p class="category">Nature</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
-                        <div class="card-content">
-                            <h3>Cyberpunk City, Neon</h3>
-                            <p class="category">Digital Art</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                        <div class="card-content">
-                            <h3>Forest Mist, Serenity</h3>
-                            <p class="category">Landscape</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
-                        <div class="card-content">
-                            <h3>Sunset Beach, Tropical</h3>
-                            <p class="category">Nature</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                        <div class="card-content">
-                            <h3>Starfield, Galaxy</h3>
-                            <p class="category">Space</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
-                        <div class="card-content">
-                            <h3>Waterfall Paradise, Tropical</h3>
-                            <p class="category">Landscape</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wallpaper-card">
-                    <div class="card-inner">
-                        <div class="card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                        <div class="card-content">
-                            <h3>Volcano Landscape, Dramatic</h3>
-                            <p class="category">Landscape</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Wallpaper cards will be loaded here -->
+            </div>
+            <div id="loadMore" class="load-more">
+                <button class="btn-primary">Load More Wallpapers</button>
             </div>
         </div>
     </section>
 
-    <!-- Ads Section -->
-    <section id="ads" class="ads-section">
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Download Wallpaper</h2>
+            
+            <div class="modal-body">
+                <div class="preview-section">
+                    <img id="previewImage" src="" alt="Wallpaper Preview">
+                </div>
+
+                <div class="resolution-picker">
+                    <h3>Select Resolution</h3>
+                    <div class="resolution-buttons">
+                        <button class="resolution-btn" data-res="1920x1080">1920x1080 (1080p)</button>
+                        <button class="resolution-btn" data-res="2560x1440">2560x1440 (1440p)</button>
+                        <button class="resolution-btn" data-res="3840x2160">3840x2160 (4K)</button>
+                        <button class="resolution-btn" data-res="7680x4320">7680x4320 (8K)</button>
+                    </div>
+
+                    <h3>Device Presets</h3>
+                    <div class="device-presets">
+                        <button class="preset-btn" data-preset="iphone">iPhone 15</button>
+                        <button class="preset-btn" data-preset="galaxy">Galaxy S24</button>
+                        <button class="preset-btn" data-preset="ipad">iPad Pro</button>
+                        <button class="preset-btn" data-preset="desktop">Desktop</button>
+                    </div>
+
+                    <h3>Export Format</h3>
+                    <select id="formatSelect">
+                        <option value="webp">WebP (Best Quality & Speed)</option>
+                        <option value="jpg">JPG (Universal)</option>
+                        <option value="png">PNG (Lossless)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="confirmDownload" class="btn-primary">Download</button>
+                <button id="setAsWallpaper" class="btn-secondary">Set as Wallpaper</button>
+                <button class="btn-secondary" onclick="document.getElementById('downloadModal').style.display='none'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallpaper Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content detail-content">
+            <span class="close">&times;</span>
+            
+            <div class="detail-grid">
+                <div class="detail-image">
+                    <img id="detailImage" src="" alt="Wallpaper">
+                </div>
+
+                <div class="detail-info">
+                    <h2 id="detailTitle"></h2>
+                    <p id="detailDescription"></p>
+
+                    <div class="detail-stats">
+                        <div class="stat">
+                            <i class="fas fa-eye"></i>
+                            <span id="detailViews">0</span> Views
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-download"></i>
+                            <span id="detailDownloads">0</span> Downloads
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span id="detailRating">0</span> Rating
+                        </div>
+                    </div>
+
+                    <div class="rating-section">
+                        <h3>Rate This Wallpaper</h3>
+                        <div class="star-rating" id="starRating">
+                            <i class="fas fa-star" data-value="1"></i>
+                            <i class="fas fa-star" data-value="2"></i>
+                            <i class="fas fa-star" data-value="3"></i>
+                            <i class="fas fa-star" data-value="4"></i>
+                            <i class="fas fa-star" data-value="5"></i>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="favoriteBtn" class="btn-favorite">
+                            <i class="fas fa-heart"></i> Add to Favorites
+                        </button>
+                        <button id="downloadBtn" class="btn-primary">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-qrcode"></i> QR Code
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+
+                    <div class="comments-section">
+                        <h3>Comments</h3>
+                        <div id="commentsList" class="comments-list"></div>
+                        <textarea id="commentInput" placeholder="Add a comment..."></textarea>
+                        <button class="btn-primary">Post Comment</button>
+                    </div>
+
+                    <div class="artist-section" id="artistSection">
+                        <h3>Artist Info</h3>
+                        <div id="artistInfo" class="artist-info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Collection Section -->
+    <section id="my-collection" class="collection-section" style="display:none;">
         <div class="section-container">
-            <div id="sidebarTopAd" class="ad-container ad-sidebar-top"></div>
-            <div id="sidebarMiddleAd" class="ad-container ad-sidebar-middle"></div>
+            <h2>My Collection</h2>
+            <div class="collection-tabs">
+                <button class="tab-btn active" data-tab="favorites">Favorites</button>
+                <button class="tab-btn" data-tab="downloads">Download History</button>
+                <button class="tab-btn" data-tab="folders">Folders</button>
+            </div>
+            <div id="favoritesTab" class="tab-content">
+                <div class="gallery-grid" id="favoritesGrid"></div>
+            </div>
+            <div id="downloadsTab" class="tab-content" style="display:none;">
+                <div id="downloadHistory"></div>
+            </div>
+            <div id="foldersTab" class="tab-content" style="display:none;">
+                <div id="foldersList"></div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section" style="display:none;">
         <div class="section-container">
-            <h2>About 4KWallpaper.pro</h2>
-            <p>Welcome to 4KWallpaper.pro, your premier destination for premium, high-resolution wallpapers. Our curated collection brings stunning visuals from landscapes, gaming, digital art, and more.</p>
-            <p>Every wallpaper is carefully selected to ensure the highest quality at 4K resolution. Whether you're seeking serenity in nature or excitement in gaming artwork, we have something for everyone. All hosted on GitHub Pages for fast and reliable access.</p>
+            <h2>Upload Your Wallpaper</h2>
+            <div class="upload-area">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag and drop your wallpaper here or click to select</p>
+                <input type="file" id="fileInput" accept="image/*" style="display:none;">
+            </div>
+            <form id="uploadForm">
+                <input type="text" placeholder="Wallpaper Title" required>
+                <textarea placeholder="Description" required></textarea>
+                <select required>
+                    <option>Select Category</option>
+                    <option value="nature">Nature</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="anime">Anime</option>
+                </select>
+                <input type="text" placeholder="Tags (comma-separated)">
+                <input type="text" placeholder="Attribution (if applicable)">
+                <button type="submit" class="btn-primary">Upload</button>
+            </form>
         </div>
-    </section>
-
-    <!-- Footer Banner Ad -->
-    <section id="footerAd" class="footer-ad-section">
-        <div id="footerBannerAd" class="ad-container ad-footer-banner"></div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 4KWallpaper.pro | All Rights Reserved</p>
-            <div class="social-links">
-                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>Premium 4K wallpapers for desktop, mobile, and tablet devices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#dmca">DMCA</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 4KWallpaper.pro | All Rights Reserved</p>
+        </div>
     </footer>
+
+    <!-- Google AdSense Placeholder -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx"
+     crossorigin="anonymous"></script>
 
     <script src="script.js"></script>
 </body>
